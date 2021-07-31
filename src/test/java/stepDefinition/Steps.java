@@ -35,7 +35,7 @@ public class Steps {
     }
     @When("user chooses do your partner claim any benefits or tax credits and {string} and click on next")
     public void user_chooses_do_your_partner_claim_any_benefits_or_tax_credits_and_and_click_on_next(String benefit) {
-    help.doYourPartnerClaimBenefit(benefit);
+    help.reUsableMethod(benefit);
     }
     @When("user choose do you or your partner get universal credit {string} and click on next")
     public void user_choose_do_you_or_your_partner_get_universal_credit_and_click_on_next(String universalC) {
@@ -52,6 +52,7 @@ public class Steps {
     @Then("user should navigate to the result page")
     public void user_should_navigate_to_the_result_page() {
     Assert.assertTrue(help.isUserOnResultPage());
+    help.pageContent();
     }
 
     @And("user choose are you pregnat or have given birth {string} and click on next")
@@ -81,8 +82,8 @@ public class Steps {
     help.reUsableMethod(councilHelp);
     }
 
-    @And("user chooses do your partner claim any benefits or tax credits and {string}")
+   /* @And("user chooses do your partner claim any benefits or tax credits and {string}")
     public void userChoosesDoYourPartnerClaimAnyBenefitsOrTaxCreditsAnd(String benefit) {
     help.doYourPartnerClaimBenefit(benefit);
-    }
+    }*/
 }

@@ -5,9 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class HelpWithNHSCost extends BasePage{
     public HelpWithNHSCost(){
@@ -39,6 +37,8 @@ public class HelpWithNHSCost extends BasePage{
     WebElement universalCredit;
     @FindBy(css="label[for=not-yet]")
     WebElement notYetUniversalCredit;
+    @FindBy(className = "column-two-thirds")
+    WebElement pageContent;
 
 
 
@@ -83,7 +83,7 @@ public class HelpWithNHSCost extends BasePage{
         }
     }
 
-    public void doYourPartnerClaimBenefit(String text){
+    /*public void doYourPartnerClaimBenefit(String text){
         if(text.equalsIgnoreCase("yes")) {
             Util.click(yes);
             Util.click(next);
@@ -110,19 +110,8 @@ public class HelpWithNHSCost extends BasePage{
             Util.click(no);
             Util.click(next);
         }
-        /*else if(text.equalsIgnoreCase("yes")){
-            Util.click(yes);
-            Util.click(next);
-            Util.click(yes);
-            Util.click(next);
-        }
-        else{
-            Util.click(no);
-            Util.click(next);
-            Util.click(no);
-            Util.click(next);
-        }*/
-    }
+
+    }*/
     public void doYourPartnerGetUniversalCredit(String text){
         if(text.equalsIgnoreCase("yes")) {
             Util.click(universalCredit);
@@ -137,6 +126,12 @@ public class HelpWithNHSCost extends BasePage{
 
     public boolean isUserOnResultPage(){
        return Util.isDisplayed(resultPage);
+    }
+    public void pageContent(){
+        String page = driver.findElement(By.className("column-two-thirds")).getText();
+        System.out.println(page);
+
+
     }
 
 }

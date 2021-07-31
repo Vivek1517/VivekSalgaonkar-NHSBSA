@@ -31,4 +31,8 @@ public static void elementToBeSelected(WebDriver driver, WebElement element, lon
     WebDriverWait wait = new WebDriverWait(driver,seconds);
     wait.until(ExpectedConditions.elementToBeSelected(element));
 }
+public static String printPageContent(WebElement element){
+    return element.getText();
+
+}
 }
