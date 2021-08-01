@@ -4,7 +4,7 @@ Feature: Cost checker tool
     When user clicks on the start button
     Then user should navigate to select a country
 
-  @WithBenefits1
+  @Test1
   Scenario Outline: Verify user sees what help they get when they claims benefits
     When user selects "<country>" and clicks next
     And user enters "<date>", "<month>" and "<year>" and clicks next
@@ -17,7 +17,7 @@ Feature: Cost checker tool
     Examples:
       | country | date | month | year | partner | benefit | universal credit | universal option | take home pay |
       | Wales   | 06   | 08    | 1980 | yes     | yes     | yes              | yes              | yes           |
-@Test1
+@Test2
   Scenario Outline: Verify user sees what help they get when they claims no benefits
     When user selects "<country>" and clicks next
     And user enters "<date>", "<month>" and "<year>" and clicks next
@@ -32,8 +32,8 @@ Feature: Cost checker tool
       | country | date | month | year | partner | benefit | pregnant | injuries | diabetes | glaucoma | care home | investments |
       | Wales   | 06   | 08    | 1980 | yes     | no      | no       | no       | no       | no       | no        | no          |
       | Wales   | 06   | 08    | 1980 | no      | no      | yes      | yes      | yes      | yes      | no        | yes         |
-  @Test2
-  Scenario Outline: Verify user see what help they get when they claim home care benefits
+  @Test3
+  Scenario Outline: Verify user see what help they get when they claim care home benefits
     When user selects "<country>" and clicks next
     And user enters "<date>", "<month>" and "<year>" and clicks next
     And user chooses do you leave with a patner and "<partner>" and clicks next
@@ -47,7 +47,7 @@ Feature: Cost checker tool
 
       | country | date | month | year | partner | benefit | pregnant | injuries | diabetes | glaucoma | care home | council help |  |
       | Wales   | 06   | 08    | 1980 | yes     | no      | yes      | yes      | yes      | yes      | yes       | yes          |  |
-  @Test3
+  @Test4
     Scenario Outline: Verify user see what help they get when they claim no care home benefits
     When user selects "<country>" and clicks next
     And user enters "<date>", "<month>" and "<year>" and clicks next

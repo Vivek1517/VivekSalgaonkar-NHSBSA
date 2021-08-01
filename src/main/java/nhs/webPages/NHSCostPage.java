@@ -7,12 +7,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class HelpWithNHSCost extends BasePage{
-    public HelpWithNHSCost(){
+public class NHSCostPage extends BasePage{
+    public NHSCostPage(){
         PageFactory.initElements(driver,this);
     }
-    @FindBy(id="nhsuk-cookie-banner__link_accept_analytics")
-    WebElement acceptCookies;
     @FindBy(id="next-button")
     WebElement next;
     @FindBy(className="heading-group")
@@ -37,14 +35,7 @@ public class HelpWithNHSCost extends BasePage{
     WebElement universalCredit;
     @FindBy(css="label[for=not-yet]")
     WebElement notYetUniversalCredit;
-    @FindBy(className = "column-two-thirds")
-    WebElement pageContent;
 
-
-
-    public void acceptCookies(){
-        Util.click(acceptCookies);
-    }
     public boolean isUserOnHelpPayingNHSCostPage(){
         return Util.isDisplayed(verifyPage);
     }
@@ -56,9 +47,6 @@ public class HelpWithNHSCost extends BasePage{
     }
     public void selectCountry(String country){
         if(country.equalsIgnoreCase("Wales")){
-            /*WebDriverWait wait = new WebDriverWait(driver,3);
-            wait.until(ExpectedConditions.elementToBeSelected(selectWales));*/
-           // Util.waitTime(3);
             Util.click(selectWales);
             Util.click(next);
         }
@@ -82,36 +70,6 @@ public class HelpWithNHSCost extends BasePage{
             Util.click(next);
         }
     }
-
-    /*public void doYourPartnerClaimBenefit(String text){
-        if(text.equalsIgnoreCase("yes")) {
-            Util.click(yes);
-            Util.click(next);
-            Util.click(universalCredit);
-            Util.click(next);
-            Util.click(yes);
-            Util.click(next);
-            Util.click(yes);
-            Util.click(next);
-        }
-        else if(text.equalsIgnoreCase("no")){
-            Util.click(no);
-            Util.click(next);
-            Util.click(yes);
-            Util.click(next);
-            Util.click(yes);
-            Util.click(next);
-            Util.click(yes);
-            Util.click(next);
-            Util.click(yes);
-            Util.click(next);
-            Util.click(no);
-            Util.click(next);
-            Util.click(no);
-            Util.click(next);
-        }
-
-    }*/
     public void doYourPartnerGetUniversalCredit(String text){
         if(text.equalsIgnoreCase("yes")) {
             Util.click(universalCredit);
@@ -123,15 +81,12 @@ public class HelpWithNHSCost extends BasePage{
             Util.click(next);
         }
     }
-
     public boolean isUserOnResultPage(){
        return Util.isDisplayed(resultPage);
     }
     public void pageContent(){
         String page = driver.findElement(By.className("column-two-thirds")).getText();
         System.out.println(page);
-
-
     }
 
 }
