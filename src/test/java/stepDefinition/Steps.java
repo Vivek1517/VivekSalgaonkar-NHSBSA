@@ -29,7 +29,7 @@ public class Steps {
     }
     @When("user chooses do you leave with a patner and {string} and clicks next")
     public void user_chooses_do_you_leave_with_a_patner_and_and_clicks_next(String partner) {
-    costPage.reUsableMethod(partner);
+    costPage.selectOption(partner);
     }
     @When("user chooses do your partner claim any benefits or tax credits and {string} and click on next")
     public void user_chooses_do_your_partner_claim_any_benefits_or_tax_credits_and_and_click_on_next(String benefit) {
