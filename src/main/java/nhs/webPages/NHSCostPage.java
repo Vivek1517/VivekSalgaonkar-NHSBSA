@@ -58,7 +58,7 @@ public class NHSCostPage extends BasePage{
         Util.sendKeys(inputYear, year);
         Util.click(next);
     }
-    public void reUsableMethod(String text){
+    public void selectOption(String text){
         if(text.equalsIgnoreCase("yes")) {
             Util.click(yes);
             Util.click(next);
