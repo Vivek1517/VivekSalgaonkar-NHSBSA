@@ -33,7 +33,7 @@ public class Steps {
     }
     @When("user chooses do your partner claim any benefits or tax credits and {string} and click on next")
     public void user_chooses_do_your_partner_claim_any_benefits_or_tax_credits_and_and_click_on_next(String benefit) {
-    costPage.reUsableMethod(benefit);
+    costPage.selectOption(benefit);
     }
     @When("user choose do you or your partner get universal credit {string} and click on next")
     public void user_choose_do_you_or_your_partner_get_universal_credit_and_click_on_next(String universalC) {
@@ -41,11 +41,11 @@ public class Steps {
     }
     @When("user chooses as a part of your joint universal credit {string} and click on next")
     public void user_chooses_as_a_part_of_your_joint_universal_credit_and_click_on_next(String universalOption) {
-    costPage.reUsableMethod(universalOption);
+    costPage.selectOption(universalOption);
     }
     @When("user chooses combined take home pay option as {string} and click on next")
     public void user_chooses_combined_take_home_pay_option_as_and_click_on_next(String takeHomePay) {
-    costPage.reUsableMethod(takeHomePay);
+    costPage.selectOption(takeHomePay);
     }
     @Then("user should navigate to the result page")
     public void user_should_navigate_to_the_result_page() {
@@ -54,25 +54,25 @@ public class Steps {
     }
     @And("user choose are you pregnat or have given birth {string} and click on next")
     public void userChooseAreYouPregnatOrHaveGivenBirthAndClickOnNext(String pregnant) {
-    costPage.reUsableMethod(pregnant);
+    costPage.selectOption(pregnant);
     }
     @And("user chooses have any injuries or ilness by working in arm forces {string}, {string} and {string}click on next")
     public void userChoosesHaveAnyInjuriesOrIlnessByWorkingInArmForcesAndClickOnNext(String ilness, String diabetes, String glacoma) {
-    costPage.reUsableMethod(ilness);
-    costPage.reUsableMethod(diabetes);
-    costPage.reUsableMethod(glacoma);
+    costPage.selectOption(ilness);
+    costPage.selectOption(diabetes);
+    costPage.selectOption(glacoma);
     }
     @And("user chooses does your partner live in a care home {string} and click on next")
     public void userChoosesDoesYourPartnerLiveInACareHomeAndClickOnNext(String careHome) {
-    costPage.reUsableMethod(careHome);
+    costPage.selectOption(careHome);
     }
     @And("user chooses if they have saving or investements {string} and click on next")
     public void userChoosesIfTheyHaveSavingOrInvestementsAndClickOnNext(String investment) {
-    costPage.reUsableMethod(investment);
+    costPage.selectOption(investment);
     }
     @And("user chooses do you get help from council for care home {string} and click on next")
     public void userChoosesDoYouGetHelpFromCouncilForCareHomeAndClickOnNext(String councilHelp) {
-    costPage.reUsableMethod(councilHelp);
+    costPage.selectOption(councilHelp);
     }
 
 }
